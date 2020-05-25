@@ -12,7 +12,6 @@ function publish() {
   };
 
   sns.publish(publishParams, function(err, data) {
-    process.stdout.write(".");
     console.log(data);
   });
 }
