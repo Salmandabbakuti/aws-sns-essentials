@@ -16,7 +16,7 @@ function createTopic() {
       console.log(err);
     }
     console.log(util.inspect(result));
-    console.log(`Topic created with ARN: result.TopicArn`);
+    console.log(`Topic created with ARN: ${result.TopicArn}`);
     });
  }
 createTopic()
