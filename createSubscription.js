@@ -1,7 +1,5 @@
 var AWS = require('aws-sdk');
 var util = require('util');
-var config = require('./config.json');
-
 // configure AWS
 AWS.config.loadFromPath("./config.json");
 var sns = new AWS.SNS();
