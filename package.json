@@ -2,7 +2,7 @@
   "name": "aws-sns-pubsub",
   "version": "1.0.0",
   "description": "AWS SNS Service Topic PUB/SUB notifications",
-  "main": "app.js",
+  "main": "publish.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
