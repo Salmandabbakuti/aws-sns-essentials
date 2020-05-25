@@ -17,5 +17,6 @@ function createTopic() {
     }
     console.log(util.inspect(result));
     console.log(`Topic created with ARN: result.TopicArn`);
-  });
-}
+    });
+ }
+createTopic()
