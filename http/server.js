@@ -37,4 +37,17 @@ app.post('/subscribe', (req, res) => {
     }
   });
 });
+app.post('/publish', (req, res) => {
+  let params = {
+    Message: req.body.message,
+    Subject: req.body.subject,
+    TopicArn: process.env.Topic_ARN
+  };
+
+  sns.publish(params, function (err, data) {
+    if (err) console.log(err, err.stack);
+    else console.log(data);
+  });
+  res.send('Message Published..')
+});
 app.listen(8080, () => { console.log('Server is running at 8080..') });
