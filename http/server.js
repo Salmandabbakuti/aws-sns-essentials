@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config()
 app.use(bodyParser.json());
-
+const AWS = require("aws-sdk");
 AWS.config.update({
   accessKeyId: process.env.ACCESSKEY_ID,
   secretAccessKey: process.env.SECRET_KEY,
