@@ -19,13 +19,13 @@ node createSubscription.js #creates subscription in defined topicARN from config
 git clone https://github.com/Salmandabbakuti/aws-sns-essentials.git
 cd aws-sns-essentials
 npm i
-node publish.js //Main pub/sub service model
+node publish.js  #Main pub/sub service model -Email Subscriptions
 
              (OR)
              
 cd mobile
 //update config.json in directory.
 npm i
-node app.js //mobile notification service irrespective of topic
+node app.js #mobile notification service irrespective of topic
 
 ```
