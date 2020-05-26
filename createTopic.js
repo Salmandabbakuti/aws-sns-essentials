@@ -8,7 +8,6 @@ function createTopic() {
   sns.createTopic({
     'Name': 'SNS-Demo'
   }, function (err, result){
-
     if (err !== null) {
       console.log(util.inspect(err));
       console.log(err);
