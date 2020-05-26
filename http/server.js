@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
             console.log(err);
         } else {
             console.log(data);
-
         }
     });
     res.end("Subscription Added and it is on its way for confirmation..");
@@ -43,16 +42,16 @@ app.post('/', (req, res) => {
     let msgType = req.headers['x-amz-sns-message-type'];
     if(msgType == 'Notification') {
         console.log('Notification has been sent to the endpoint by the sns');
-        console.log('the body of the req object is: '+JSON.stringify(body));
+        console.log('Here is the Notification: '+JSON.stringify(body));
         }
 
     if (payload.Type === 'SubscriptionConfirmation') {
       var params = {
-	            Token: payload.Token,
-	            TopicArn: process.env.TOPIC_ARN,
-	            AuthenticateOnUnsubscribe:"true"
+	    Token: payload.Token,
+	    TopicArn: process.env.TOPIC_ARN,
+	    AuthenticateOnUnsubscribe:"true"
 	    }
-	    sns.confirmSubscription(params, function(err, data){
+     sns.confirmSubscription(params, function(err, data){
         if(err !== null){
           console.log(err);
           }
@@ -60,7 +59,7 @@ app.post('/', (req, res) => {
           console.log('Subscription Confirmed:'+ JSON.stringify(data));
           res.end("Subscription Confirmed.")
          }
-	    });
+      });
     }
   })
 })
