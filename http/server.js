@@ -40,7 +40,12 @@ app.post('/', (req, res) => {
   })
 
   req.on('end', () => {
-    let payload = JSON.parse(body)
+    let payload = JSON.parse(body);
+    let msgType = req.headers['x-amz-sns-message-type'];
+    if(msgType == 'Notification') {
+        console.log('Notification has been sent to the endpoint by the sns');
+        console.log('the body of the req object is: '+JSON.stringify(req.body));
+        }
 
     if (payload.Type === 'SubscriptionConfirmation') {
       const promise = new Promise((resolve, reject) => {
