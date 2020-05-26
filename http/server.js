@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const request = require('request')
 const app = express();
 require('dotenv').config()
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -44,30 +43,27 @@ app.post('/', (req, res) => {
     let msgType = req.headers['x-amz-sns-message-type'];
     if(msgType == 'Notification') {
         console.log('Notification has been sent to the endpoint by the sns');
-        console.log('the body of the req object is: '+JSON.stringify(req.body));
+        console.log('the body of the req object is: '+JSON.stringify(body));
         }
 
     if (payload.Type === 'SubscriptionConfirmation') {
-      const promise = new Promise((resolve, reject) => {
-        const url = payload.SubscribeURL
-
-        request(url, (error, response) => {
-          if (!error && response.statusCode == 200) {
-            console.log('Subscription confirmed..')
-            return resolve()
-          } else {
-            return reject()
+      var params = {
+	            Token: payload.Token,
+	            TopicArn: process.env.TOPIC_ARN,
+	            AuthenticateOnUnsubscribe:"true"
+	    }
+	    sns.confirmSubscription(params, function(err, data){
+        if(err !== null){
+          console.log(err);
           }
-        })
-      })
-
-      promise.then(() => {
-        res.end("ok")
-      })
+         else {
+          console.log('Subscription Confirmed:'+ JSON.stringify(data));
+          res.end("Subscription Confirmed.")
+         }
+	    });
     }
   })
 })
-
 app.post('/publish', (req, res) => {
   let params = {
     Message: req.body.message,
