@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const request = require('request')
 const app = express();
 require('dotenv').config()
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 const AWS = require("aws-sdk");
 AWS.config.update({
   accessKeyId: process.env.ACCESSKEY_ID,
@@ -31,10 +32,6 @@ app.get('/', (req, res) => {
     });
     res.end("Subscription Added and it is on its way for confirmation..");
 });
-
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
 app.post('/', (req, res) => {
   let body = ''
 
