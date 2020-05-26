@@ -19,5 +19,5 @@ curl -d '{"subject":"Greetings","message":"Hello Devs, How are you all?"}' -H "C
 ```
 ##### Check Message Recieved on Endpoint:
 
-<yet to be implmented>
+>Observe Console of running ```server.js``` terminal
   
