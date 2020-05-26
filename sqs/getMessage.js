@@ -16,7 +16,11 @@ var sqs = new AWS.SQS();
    if (err) {
    console.log(err)
    }
-   else {
+   
+     if(data.Messages==undefined){
+      console.log('No new messages recieved..');   
+     }
+     else {
     let messages = JSON.stringify(data.Messages)
     console.log(`Recieved message(s): ${messages}`);
       }
