@@ -12,19 +12,15 @@ AWS.config.update({
 // sns instance
 var sns = new AWS.SNS();
 
-app.get('/', async function (req, res) {
-    
-try{
+app.post('/', async function (req, res) {
   
-  res.send(response)
-}catch (err) {
-    res.status(500).send(err)
-  }    
+  res.send('yet to implement')
+    
 })
 app.post('/subscribe', (req, res) => {
   let params = {
     Protocol: 'HTTP', //or https
-    TopicArn: process.env.Topic_ARN,
+    TopicArn: process.env.TOPIC_ARN,
     Endpoint: req.body.endpoint
   };
   console.log(params)
@@ -41,7 +37,7 @@ app.post('/publish', (req, res) => {
   let params = {
     Message: req.body.message,
     Subject: req.body.subject,
-    TopicArn: process.env.Topic_ARN
+    TopicArn: process.env.TOPIC_ARN
   };
 
   sns.publish(params, function (err, data) {
