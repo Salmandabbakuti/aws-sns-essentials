@@ -1,0 +1,18 @@
+{
+  "name": "aws-sns-http",
+  "version": "1.0.0",
+  "description": "AWS SNS Service Topic PUB/SUB notifications on http(s) endpoint",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Salman Dabbakuti",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.683.0",
+    "dotenv": "^8.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+     "request": "^2.88.0"
+  }
+}

@@ -12,12 +12,10 @@ function subscribe() {
   'Protocol': 'email',
   'Endpoint': '<email address>'
   }, function (err, result) {
-
     if (err !== null) {
       console.log(util.inspect(err));
     }
-
-    console.log(util.inspect(result));
+  console.log(util.inspect(result));
   });
  }
 subscribe()
