@@ -27,8 +27,14 @@ node publish.js  #Main pub/sub service model -Email Subscriptions
              (OR)
              
 cd mobile
-//update config.json in directory.
+//update .env in directory.
 npm i
 node app.js #mobile notification service irrespective of topic
 
 ```
+##### HTTP(S) Endpoint Subscriptions:
+>Created Rest Server for subscriptions and Publishing. Checkout instructions in folder ```http/README.md```
+
+
+
+
