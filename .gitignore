@@ -8,7 +8,10 @@ bin-release/
 .settings/
 mobile/node_modules/
 http/node_modules/
+sqs/node_modules/
 node_modules/
+config.json
+package-lock.json
 
 # Executables
 *.swf
