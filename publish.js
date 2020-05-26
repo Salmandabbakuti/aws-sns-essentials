@@ -10,7 +10,6 @@ function publish() {
     TopicArn : config.TopicArn,
     Message: "This is Test message.."
   };
-
   sns.publish(publishParams, function(err, data) {
     console.log(data);
   });
