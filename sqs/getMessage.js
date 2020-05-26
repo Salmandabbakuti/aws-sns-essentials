@@ -17,7 +17,7 @@ var sqs = new AWS.SQS();
    console.log(err)
    }
    
-     if(data.Messages==undefined){
+     if(data.Messages===undefined){
       console.log('No new messages recieved..');   
      }
      else {
