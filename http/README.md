@@ -11,7 +11,7 @@ node server.js
 
 ##### Subscribe&Confirm Subscription:
 ```
-curl http://localhost:8080?endpoint=<your preffered susbcriber endpoint public Ip>
+curl http://localhost:8080?endpoint=<your preferred susbcriber endpoint public Ip>
 ``` 
 ##### Publish Message:
 ```
@@ -19,5 +19,5 @@ curl -d '{"subject":"Greetings","message":"Hello Devs, How are you all?"}' -H "C
 ```
 ##### Check Message Recieved on Endpoint:
 
-<yet to be implmented>
+>Observe Console of running ```server.js``` terminal
   

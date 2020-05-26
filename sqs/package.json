@@ -1,8 +1,8 @@
 {
-  "name": "aws-sns-mobile",
+  "name": "aws-sqs-example",
   "version": "1.0.0",
-  "description": "AWS SNS Service mobile notifications",
-  "main": "app.js",
+  "description": "AWS SQS Service Example",
+  "main": "createQueue.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

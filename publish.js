@@ -11,7 +11,8 @@ function publish() {
     Message: "This is Test message.."
   };
   sns.publish(publishParams, function(err, data) {
-    console.log(data);
+    if (err) console.log(err)
+    else console.log(data);
   });
 }
 publish();

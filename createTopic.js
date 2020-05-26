@@ -6,7 +6,7 @@ var sns = new AWS.SNS();
 
 function createTopic() {
   sns.createTopic({
-    'Name': 'SNS-Demo'
+    'Name': 'SNS-Demo' //topic name to be created
   }, function (err, result){
     if (err !== null) {
       console.log(util.inspect(err));
