@@ -3,6 +3,7 @@ AWS SNS Setup and workaround Repository
 
 ##### Pre-requisites:
 1. Create a Topic
+> Update ```config.json``` according to your AWS Credentials
 ```
 node createTopic.js
 ```
