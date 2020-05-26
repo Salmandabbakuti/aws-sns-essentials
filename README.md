@@ -9,10 +9,10 @@ node createTopic.js
 ```
 2. Add Subscribers in created Topic
 
-- Update ```config.json``` according to your created AWS SNS service
+- Update ```TopicArn``` in ```config.json``` according to your created AWS SNS service Topic.
 
 ```
-node createSubscription.js #creates subscription in defined topicARN from config.json
+node createSubscription.js  #creates subscription in defined topicARN from config.json
 ```
 
 ##### Quick Demo(Publishing):
@@ -20,6 +20,7 @@ node createSubscription.js #creates subscription in defined topicARN from config
 git clone https://github.com/Salmandabbakuti/aws-sns-essentials.git
 cd aws-sns-essentials
 npm i
+//update config.json in directory.
 node publish.js  #Main pub/sub service model -Email Subscriptions
 
              (OR)
