@@ -14,7 +14,7 @@ node createTopic.js
 ```
 node createSubscription.js  #creates subscription in defined topicARN from config.json
 ```
->confirm subscription on your email
+3. Confirm subscription in recieved email
 
 ##### Quick Demo(Publishing):
 ```
