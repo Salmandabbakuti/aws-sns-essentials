@@ -1,7 +1,7 @@
 
 #### SNS Mobile Notifications
 
-- Update ```config.json``` according to your SNS setup
+- Update ```.env``` according to your SNS setup
 
 ```
 npm i
